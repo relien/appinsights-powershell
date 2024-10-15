@@ -3,7 +3,7 @@
 Set-Location "$PSScriptRoot/.."
 
 $Module = 'AppInsights'
-$Version = [System.Version]::new(1,0,0)
+$Version = [System.Version]::new(2,0,0)
 
 # Build module
 dotnet build .\src\AppInsights -o .\output\$Module\bin
