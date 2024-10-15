@@ -1,8 +1,8 @@
 # Script for creating the assemblies and help
 # 1. ----------------------------------------------------------
-Set-Location E:\source\repos\appinsights-powershell
+Set-Location "$PSScriptRoot/.."
 
-$Module = 'AppInsightsExtended'
+$Module = 'AppInsights'
 $Version = [System.Version]::new(1,0,0)
 
 # Build module
@@ -21,8 +21,6 @@ Copy-Item .\src\$Module.psm1 .\output\$Module\ -Force
 
 Update-ModuleManifest .\Output\$Module\$Module.psd1 -ModuleVersion $Version
 
-
-return
 # 4. ----------------------------------------------------------
 # Create documentation an help files with platyps
 # https://docs.microsoft.com/de-de/powershell/scripting/dev-cross-plat/create-help-using-platyps?view=powershell-7.1
