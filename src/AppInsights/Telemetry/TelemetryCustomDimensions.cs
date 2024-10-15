@@ -34,7 +34,12 @@ namespace AppInsights.Telemetry
             ThrowIfPropertiesAreInvalid(properties);
 
             if (HashtableIsNotNullOrEmpty(properties))
-                _formatter.AddCustomProperty(CUSTOM_PROPERTIES_ID, properties);
+            {
+                foreach(DictionaryEntry e in properties)
+                {
+                    _formatter.AddCustomProperty(e.Key.ToString(), e.Value);
+                }
+            }
 
             return this;
         }
